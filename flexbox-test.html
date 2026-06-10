@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEXBOX_TRAINNING</title>
+    <link rel="stylesheet" href="flex_styles.css" />
+   
+  </head>
+
+  <body>
+        <main>
+            <header>
+                <h1>Apprendre Flexbox par le visuel</h1>
+                <div>
+                    <button id="popoverButton" type="button" >Description</button>
+                    <div id="popoverContent" class="popover-custom">
+                        <div class="popover-custom-title">Description</div>
+                        <div class="popover-custom-content">Chaque section met en évidence une propriété. Choisissez une propriété et une valeur pour l'appliquer au conteneur de démonstration.</div>
+                    </div>
+                </div>
+        <p class="note">Chaque exemple est indépendant: lis la description et observe le comportement.</p>
+            
+            </header>
+            <section class="intro">
+                <div class="card" >
+                    <img src="assets/flex_terms.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Flexbox</h2>
+                        <p class="card-text">Lorsqu'on travaille avec les boîtes flexibles, deux axes interviennent : l'axe principal (main axis en anglais) et l'axe secondaire (cross axis en anglais). L'axe principal est défini par la propriété flex-direction et l'axe secondaire est l'axe qui lui est perpendiculaire. Tout ce que nous manipulons avec les boîtes flexibles fera référence à ces axes.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="example" id="interactive">
+                <h3>Interaction | Tester l'alignement</h3>
+                <p class="desc">Choisis une propriété d'alignement et une valeur pour l'appliquer au conteneur de démonstration.</p>
+                <div class="controls" id="interactiveControls">
+                    <label>Propriété:
+                        <select id="propSelect">
+                            <option value="justifyContent">justify-content</option>
+                            <option value="alignItems">align-items</option>
+                            <option value="alignContent">align-content</option>
+                            <option value="flexWrap">flex-wrap</option>
+                        </select>
+                    </label>
+                    <label>Valeur:
+                        <select id="valueSelect"></select>
+                    </label>
+                    <button id="applyBtn">Appliquer</button>
+                    <button id="resetBtn">Réinitialiser</button>
+                </div>
+                <div class="container demo" id="interactiveContainer">
+                    <div class="box one">1</div>
+                    <div class="box two">2</div>
+                    <div class="box three">3</div>
+                    <div class="box four">4</div>
+                    <div class="box five">5</div>
+                    <div class="box six">6</div>
+                    <div class="box seven">7</div>
+                    <div class="box eight">8</div>
+                </div>
+                <p class="desc">CSS appliqué: <code id="currentCss">/* aucune */</code></p>
+            </section>
+
+            <section class="example" id="baseSection">
+                <h2>Base | Conteneur flexible</h2>
+                <p class="desc">Conteneur simple; observe le flux par défaut (row).</p>
+                <div class="section-controls" id="baseControls">
+                    <label>Propriété:
+                        <select class="section-propSelect">
+                            <option value="justifyContent">justify-content</option>
+                            <option value="alignItems">align-items</option>
+                            <option value="flexWrap">flex-wrap</option>
+                        </select>
+                    </label>
+                    <label>Valeur:
+                        <select class="section-valueSelect"></select>
+                    </label>
+                    <button class="section-applyBtn">Appliquer</button>
+                    <button class="section-resetBtn">Réinitialiser</button>
+                </div>
+                <div class="container base section-container">
+                    <div class="box">Un</div>
+                    <div class="box">Deux</div>
+                    <div class="box">Trois</div>
+                    <div class="box">Quatre</div>
+                    <div class="box">Cinq</div>
+                    <div class="box">Six</div>
+                </div>
+                <p class="desc">CSS appliqué: <code class="section-css">/* aucune */</code></p>
+            </section>
+
+            <section class="example" id="justifyContentSection">
+                <h2>Justify-content — espacement horizontal</h2>
+                <p class="desc">Compare <em>space-between</em>, <em>space-around</em> et <em>space-evenly</em>. La propriété justify-content est strech par défaut.</p>
+                <div class="section-controls" id="justifyContentControls">
+                    <label>Valeur:
+                        <select class="section-valueSelect">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </label>
+                    <button class="section-applyBtn">Appliquer</button>
+                    <button class="section-resetBtn">Réinitialiser</button>
+                </div>
+                <div class="container jc-space-between section-container">
+                    <div class="box">between</div>
+                    <div class="box">between</div>
+                    <div class="box">between</div>
+                    <div class="box">between</div>
+                    <div class="box">between</div>
+                    <div class="box">between</div>
+                </div>
+            </section>
+
+            <section class="example" id="alignContentSection">
+                <h2>Align-content — multi-lignes</h2>
+                <p class="desc">Ne s'applique que quand il y a plusieurs lignes (avec <code>flex-wrap</code>).</p>
+                <div class="section-controls" id="alignContentControls">
+                    <label>Propriété:
+                        <select class="section-propSelect">
+                            <option value="alignContent">align-content</option>
+                            <option value="flexWrap">flex-wrap</option>
+                        </select>
+                    </label>
+                    <label>Valeur:
+                        <select class="section-valueSelect"></select>
+                    </label>
+                    <button class="section-applyBtn">Appliquer</button>
+                    <button class="section-resetBtn">Réinitialiser</button>
+                </div>
+                <div class="container wrap ac-start tall section-container">
+                    <div class="box">A</div>
+                    <div class="box">B</div>
+                    <div class="box">C</div>
+                    <div class="box">D</div>
+                    <div class="box">E</div>
+                    <div class="box">F</div>
+                </div>
+            </section>
+
+            <section class="example" id="alignItemsSection">
+                <h2>Align-items & Align-self</h2>
+                <p class="desc"><code>align-items</code> règle la ligne; <code>align-self</code> peut surcharger un élément.</p>
+                <div class="section-controls" id="alignItemsControls">
+                    <label>Valeur align-items:
+                        <select class="section-valueSelect">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="stretch">stretch</option>
+                            <option value="baseline">baseline</option>
+                        </select>
+                    </label>
+                    <button class="section-applyBtn">Appliquer</button>
+                    <button class="section-resetBtn">Réinitialiser</button>
+                </div>
+                <div class="container tall section-container">
+                    <div class="box self-start">self-start</div>
+                    <div class="box">center</div>
+                    <div class="box self-end">self-end</div>
+                </div>
+            </section>
+
+            <section class="example" id="flexPropertiesSection">
+                <h2>Flex properties — flex-grow, flex-shrink, flex-basis</h2>
+                <p class="desc">On voit rarement flex-grow, flex-shrink et flex-basis utilisées individuellement ; mais plutôt combinées avec la propriété raccourcie flex. La propriété raccourcie flex permet de définir les valeurs de cette propriété dans cet ordre — flex-grow, flex-shrink, flex-basis.</p>
+                <div class="section-controls" id="flexPropertiesControls">
+                    <label>Flex-grow:
+                        <select class="flex-grow-select">
+                            <option value="0">0</option>
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </label>
+                    <label>Flex-shrink:
+                        <select class="flex-shrink-select">
+                            <option value="0">0</option>
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </label>
+                    <label>Flex-basis:
+                        <select class="flex-basis-select">
+                            <option value="auto" selected>auto</option>
+                            <option value="0">0</option>
+                            <option value="100px">100px</option>
+                            <option value="200px">200px</option>
+                            <option value="50%">50%</option>
+                        </select>
+                    </label>
+                    <button class="flex-properties-applyBtn">Appliquer</button>
+                    <button class="flex-properties-resetBtn">Réinitialiser</button>
+                </div>
+                <div class="container section-container" id="flexPropertiesContainer">
+                    <div class="box">Box 1</div>
+                    <div class="box">Box 2</div>
+                    <div class="box">Box 3</div>
+                </div>
+                <p class="desc">CSS appliqué: <code class="flex-properties-css">/* aucune */</code></p>
+            </section>
+
+            <!-- Sections limitées aux propriétés d'alignement uniquement -->
+            <!-- (base, justify-content, align-content, align-items + align-self, wrap) -->
+        </main>
+        <!-- Scripts personnalisés -->
+        <script src="flexbox-controls.js"></script>
+        <!-- Popover personnalisé -->
+          
+  </body>
+</html>

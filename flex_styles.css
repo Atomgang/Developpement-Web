@@ -1,0 +1,283 @@
+(/* Styles dédiés aux exercices Flexbox */)
+/* Reset minimal */
+
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: 'Inter', system-ui, Arial, sans-serif;
+	background: linear-gradient(180deg,#fffafa,#ffecec);
+	color: #222;
+	padding: 20px;
+}
+
+
+header{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:1rem;margin-bottom:1rem}
+
+h1 {
+	width: 30%;
+}
+
+
+
+#popoverButton {
+	float: right;
+	padding: 10px;
+	right: 20px;
+	top: 25px;
+	margin-bottom: 10px;
+	position: absolute;
+}
+
+#popoverButton {
+	padding: 8px 16px;
+	background-color: #0d6efd;
+	color: white;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.popover-custom {
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        min-width: 250px;
+        display: none;
+      }
+
+.popover-custom.show {
+        display: block;
+      }
+.popover-custom-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+.popover-custom-content {
+        font-size: 14px;
+        line-height: 1.5;
+		margin-top: 0;
+      }
+
+.note{
+	opacity:.8;font-size:.9rem;
+	padding-top: 4rem;
+	
+}
+
+
+section > .intro {
+	line-height: 1.5;
+	justify-items: stretch;
+}
+
+.card {
+	margin: 20px;
+	padding: 20px;
+	margin: 0;
+}
+
+.card-title {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.card-body .card-text {
+	width: 100%;
+}
+
+.card-img-top {
+	display: block;
+	justify-content: center;
+	justify-self: center;
+	padding: 0;
+	margin: 0;
+}
+
+.example{
+	background:#fff;
+	padding:14px;
+	border-radius:8px;
+	box-shadow:0 2px 6px rgba(0,0,0,.06);
+	margin-bottom:18px}
+.example h2{
+	margin:0 0 6px 0;
+	font-size:1.05rem
+}
+.desc{
+	margin:0 0 12px 0;
+	color:#444;
+	font-size:.95rem
+}
+
+/* Conteneur de base pour tous les exemples */
+.container{
+	display:flex;
+	flex-wrap: wrap;
+	gap:10px;
+	padding:10px;
+	border-radius:6px;
+	background:linear-gradient(90deg,#fff,#fbfbfb);
+	border:1px solid #eee;
+	align-items:center;
+	overflow:hidden;
+}
+
+/* Boîtes enfants */
+.box{
+	background:#ff9b9b;
+	color:#3a0808;
+	padding:12px 16px;
+	border-radius:6px;
+	min-width:64px;
+	text-align:center;
+	font-weight:600;
+}
+
+.one {
+	flex-grow: auto;
+}
+
+
+.three {
+	flex-shrink: 2;
+	background-color: $bleu-500;
+}
+/* Variantes justify-content */
+.jc-start{ 
+	justify-content:flex-start;
+	margin-top: 15px;
+ }
+.jc-center{ 
+	justify-content:center;
+ }
+.jc-end{ 
+	justify-content:flex-end;
+ }
+.jc-space-between{
+	justify-content:space-between;
+}
+.jc-space-around{ 
+	justify-content:space-around;
+}
+.jc-space-evenly{ 
+	justify-content:space-evenly;
+}
+
+/* Controls layout for interactive demo */
+.controls, .section-controls { 
+	display:flex; 
+	gap:12px; 
+	align-items:center; 
+	flex-wrap:wrap; 
+	margin-bottom:10px; 
+	padding:10px;
+	background:#f8f8f8;
+	border-radius:6px;
+	border:1px solid #e0e0e0;
+}
+.controls label, .section-controls label { 
+	display:flex; 
+	gap:8px; 
+	align-items:center 
+}
+
+.controls select, .section-controls select { 
+	min-width:160px; 
+	padding:6px;
+	border:1px solid #ccc;
+	border-radius:4px;
+	font-size:0.95rem;
+}
+
+.controls button, .section-controls button { 
+	padding:6px 10px;
+	background:#ff9b9b;
+	color:#fff;
+	border:none;
+	border-radius:4px;
+	cursor:pointer;
+	font-weight:600;
+	transition:background 0.2s;
+	display: flex;
+}
+.controls button:hover, .section-controls button:hover { 
+	background:#ff7f7f;
+}
+.controls button:active, .section-controls button:active { 
+	transform:scale(0.98);
+}
+
+.presets{ margin:8px 0; 
+	display:flex; gap:8px 
+}
+
+.preset-btn{ padding:6px 10px; 
+	cursor:pointer }
+
+/* Demo container tweaks to make wrap visible */
+.demo{ min-height:120px }
+.demo .box{ flex:0 0 100px }
+
+/* Variantes align-items */
+.ai-start{ align-items:flex-start }
+.ai-center{ align-items:center }
+.ai-end{ align-items:flex-end }
+.ai-stretch{ align-items:stretch }
+
+/* Exemple haut (hauteur augmentée) pour voir l'alignement vertical */
+.tall{ height:120px }
+
+/* Wrap */
+.wrap{ flex-wrap:wrap }
+.wrap .box{ flex:0 0 120px }
+
+/* Responsive: espacer les exemples sur petit écran */
+@media (max-width:600px){
+	.container{flex-direction:column;align-items:stretch}
+	.wrap .box{flex:1 1 auto;min-width:0}
+}
+
+/* Align-content (multi-lignes) */
+.ac-start{ align-content:flex-start }
+.ac-center{ align-content:center }
+.ac-end{ align-content:flex-end }
+.ac-space-between{ align-content:space-between }
+.ac-space-around{ align-content:space-around }
+.ac-stretch{ align-content:stretch }
+
+/* Align-self pour éléments individuels */
+.self-start{ 
+	align-self:flex-start;
+	flex: auto;
+}
+.self-center{ 
+	align-self:center;
+	flex: 2;
+}
+
+.self-end{ 
+	align-self:flex-end;
+	flex : 3
+}
+
+/* Supprimer les classes non-essentielles à l'alignement */
+.box{ transition:none }
+
+/* Afficher le CSS appliqué */
+.section-css {
+	background:#f0f0f0;
+	padding:4px 8px;
+	border-radius:3px;
+	font-family:monospace;
+	font-size:0.9rem;
+}
+
