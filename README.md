@@ -54,7 +54,7 @@ cd FlexTrainning
 
 ## Licence
 
-Projet non lucratif à but éducatif.
+Projet éducatif.
 
 ## Contribution
 
