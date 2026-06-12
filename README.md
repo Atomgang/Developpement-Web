@@ -54,7 +54,7 @@ cd FlexTrainning
 
 ## Licence
 
-Projet éducatif.
+Projet éducatif et entièrement libre de droit.
 
 ## Contribution
 
