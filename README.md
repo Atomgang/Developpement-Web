@@ -1,3 +1,4 @@
+<img width="563" height="333" alt="flex_terms" src="https://github.com/user-attachments/assets/c1885d77-e279-402c-879c-b41443ddc67d" />
 # FlexTrainning
 
 Un outil interactif pour apprendre **Flexbox** visuellement en français.
